@@ -78,32 +78,29 @@ const md = "trend-x~" + base64Session;
 
 // Send the session string to user
 let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, TREND-X User!* 👋🏻
+                        let desc = `*Hey there, Njabulo-Jb User!* 👋🏻
 
-Thanks for using *TREND-X* — your session has been successfully created!
+Thanks for using *Njabulo Jb* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
 ⚠️ *Keep it safe!* Do NOT share this ID with anyone.
 
 ——————
 
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
+*✅ Stay Updated*
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/trendex2030/TREND-X
+https://github.com/NjabuloJ/Njabulo-Jb
 
 ——————
 
-> *© Powered by Trendex King*
-Stay cool and hack smart. ✌🏻`;
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TREND-x 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
+title: "Njabulo is linked device",
 thumbnailUrl: "https://files.catbox.moe/bqs70b.jpg",
 sourceUrl: "https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O",
 mediaType: 1,
