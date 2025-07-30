@@ -2,8 +2,8 @@
     "name": "pair session",
     "description": "Web Session Generator",
     "logo": "https://i.imgur.com/teQzVR1.jpeg",
-    "repository": "https://github.com/trendex2030/TREND-PAIR",
-    "keywords": ["TrendexTech","TREND-X"],
+    "repository": "https://github.com/NjabuloJ/code-site",
+    "keywords": ["NjabuloJb","Njabulo-Jb"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
     "env": {      
