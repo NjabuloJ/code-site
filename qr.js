@@ -93,16 +93,14 @@ https://github.com/NjabuloJ/Njabulo-Jb
 
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                         await sock.sendMessage(sock.user.id, {
- image: { url: `https://files.catbox.moe/adymbp.jpg` },
-caption: desc,
+text: desc,
 contextInfo: {
- mentionedJid: [m.sender],
-  forwardingScore: 999,
-  isForwarded: true,
-       forwardedNewsletterMessageInfo: {
-     newsletterJid: '120363399999197102@newsletter',
-     newsletterName: '╭••➤®Njabulo Jb',
-    serverMessageId: 143
+externalAdReply: {
+title: "Njabulo Jb",
+thumbnailUrl: "https://files.catbox.moe/0ikqoy.jpg",
+sourceUrl: "https://files.catbox.moe/0ikqoy.jpg",
+mediaType: 1,
+renderLargerThumbnail: true
 }  
 }
 }, { quoted: {
