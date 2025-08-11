@@ -71,7 +71,6 @@ var randomItem = selectRandomItem(items);
                     try {
 
 
-                        const imgs = "https://files.catbox.moe/adymbp.jpg",
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
@@ -98,16 +97,14 @@ git clone https://github.com/NjabuloJ/Njabulo-Jb
 
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`; 
                         await sock.sendMessage(sock.user.id, {
- image: { url: imgs},
 text: desc,
 contextInfo: {
- mentionedJid: [m.sender],
-  forwardingScore: 999,
-  isForwarded: true,
-       forwardedNewsletterMessageInfo: {
-     newsletterJid: '120363399999197102@newsletter',
-     newsletterName: '╭••➤®Njabulo Jb',
-    serverMessageId: 143
+externalAdReply: {
+title: "Njabulo Jb",
+thumbnailUrl: "https://files.catbox.moe/0ikqoy.jpg",
+sourceUrl: "https://files.catbox.moe/0ikqoy.jpg",
+mediaType: 1,
+renderLargerThumbnail: true
    }  
    }
    }, { quoted: {
