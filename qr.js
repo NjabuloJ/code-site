@@ -94,7 +94,7 @@ https://github.com/NjabuloJ/Njabulo-Jb
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                         await sock.sendMessage(sock.user.id, {
  image: { url: `https://files.catbox.moe/adymbp.jpg` },
-text: desc,
+caption: desc,
 contextInfo: {
  mentionedJid: [m.sender],
   forwardingScore: 999,
