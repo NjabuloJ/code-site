@@ -98,17 +98,19 @@ git clone https://github.com/NjabuloJ/Njabulo-Jb
 
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`; 
                         await sock.sendMessage(sock.user.id, {
+ image: { url: `https://files.catbox.moe/adymbp.jpg` },
 text: desc,
 contextInfo: {
-externalAdReply: {
-title: "Njabulo Jb",
-thumbnailUrl: "https://files.catbox.moe/adymbp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-mediaType: 1,
-renderLargerThumbnail: true
-}  
-}
-}, { quoted: {
+ mentionedJid: [m.sender],
+  forwardingScore: 999,
+  isForwarded: true,
+       forwardedNewsletterMessageInfo: {
+     newsletterJid: '120363399999197102@newsletter',
+     newsletterName: '╭••➤®Njabulo Jb',
+    serverMessageId: 143
+   }  
+   }
+   }, { quoted: {
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`,
@@ -125,7 +127,7 @@ renderLargerThumbnail: true
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
                             let desc = `Hey there, TREND-X User!* 👋🏻
 
-Thanks for using *TREND-X* — your session has been successfully created!
+Thanks for using *Njabulo Jb* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
 ⚠️ *Keep it safe!* Do NOT share this ID with anyone.
