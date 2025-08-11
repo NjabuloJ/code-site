@@ -75,11 +75,11 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "trend-x~" + string_session;
+                        let md = "njabulo~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, TREND-X User!* 👋🏻
+                        let desc = `*Hey there, Njabulo Jb User!* 👋🏻
 
-Thanks for using *TREND-X* — your session has been successfully created!
+Thanks for using *Njabulo Jb* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
 ⚠️ *Keep it safe!* Do NOT share this ID with anyone.
@@ -88,11 +88,11 @@ Thanks for using *TREND-X* — your session has been successfully created!
 
 *✅ Stay Updated:*  
 Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
+https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-git clone https://github.com/trendex2030/TREND-X
+git clone https://github.com/NjabuloJ/Njabulo-Jb 
 
 ——————
 
@@ -102,9 +102,9 @@ Stay cool and hack smart. ✌🏻`;
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TREND-X",
+title: "Njabulo Jb",
 thumbnailUrl: "https://files.catbox.moe/adymbp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O",
+sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
