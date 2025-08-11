@@ -96,8 +96,7 @@ git clone https://github.com/NjabuloJ/Njabulo-Jb
 
 ——————
 
-> *© Powered by trend-x King*
-Stay cool and hack smart. ✌🏻`; 
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`; 
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
@@ -109,8 +108,19 @@ mediaType: 1,
 renderLargerThumbnail: true
 }  
 }
-},
-{quoted:code })
+}, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "✆︎NנɐႦυℓσ נႦ verified",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=254700000000:+254 700 000000\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
                             let desc = `Hey there, TREND-X User!* 👋🏻
@@ -128,19 +138,18 @@ https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/trendex2030/TREND-X
+https://github.com/NjabuloJ/Njabulo-Jb
 
 ——————
 
-> *© Powered by trendex King*
-Stay cool and hack smart. ✌🏻`;
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TREND-X",
+title: "Njabulo Jb",
 thumbnailUrl: "https://files.catbox.moe/adymbp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O",
+sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
 mediaType: 2,
 renderLargerThumbnail: true,
 showAdAttribution: true
