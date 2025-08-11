@@ -71,7 +71,7 @@ var randomItem = selectRandomItem(items);
                     try {
 
 
-                        
+                        const imgs = "https://files.catbox.moe/adymbp.jpg",
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
@@ -98,8 +98,8 @@ git clone https://github.com/NjabuloJ/Njabulo-Jb
 
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`; 
                         await sock.sendMessage(sock.user.id, {
- image: { url: `https://files.catbox.moe/adymbp.jpg` },
-caption: desc,
+ image: { url: imgs},
+text: desc,
 contextInfo: {
  mentionedJid: [m.sender],
   forwardingScore: 999,
