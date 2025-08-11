@@ -70,11 +70,11 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "trend-x~" + string_session;
+                        let md = "njabulo~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
-                        let desc = `*Hey there, TREND-X User!* 👋🏻
+                        let desc = `*Hey there, Njabulo Jb User!* 👋🏻
 
-Thanks for using *TREND-X* — your session has been successfully created!
+Thanks for using *Njabulo Jb* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
 ⚠️ *Keep it safe!* Do NOT share this ID with anyone.
@@ -83,34 +83,44 @@ Thanks for using *TREND-X* — your session has been successfully created!
 
 *✅ Stay Updated:*  
 Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
+https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u
 
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/trendex2030/TREND-X
+https://github.com/NjabuloJ/Njabulo-Jb
 
 ——————
 
-> *© Powered by trendex King*
-Stay cool and hack smart. ✌🏻`;
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                         await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TREND-X 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉",
-thumbnailUrl: "https://files.catbox.moe/adymbp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O",
+title: "Njabulo Jb connected linked device",
+thumbnailUrl: "https://files.catbox.moe/0ikqoy.jpg",
+sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
 mediaType: 1,
 renderLargerThumbnail: true
 }  
 }
-},
-{quoted:code })
+}, { quoted: {
+            key: {
+                fromMe: false,
+                participant: `0@s.whatsapp.net`,
+                remoteJid: "status@broadcast"
+            },
+            message: {
+                contactMessage: {
+                    displayName: "✆︎NנɐႦυℓσ נႦ verified",
+                    vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Njabulo-Jb;BOT;;;\nFN:Njabulo-Jb\nitem1.TEL;waid=254700000000:+254 700 000000\nitem1.X-ABLabel:Bot\nEND:VCARD`
+                }
+            }
+        } });
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `*Hey there, TREND-X User!* 👋🏻
+                            let desc = `*Hey there, Njabulo Jb User!* 👋🏻
 
-Thanks for using *TREND-X* — your session has been successfully created!
+Thanks for using *njabulo~* — your session has been successfully created!
 
 🔐 *Session ID:* Sent above  
 ⚠️ *Keep it safe!* Do NOT share this ID with anyone.
@@ -119,20 +129,19 @@ Thanks for using *TREND-X* — your session has been successfully created!
 
 *✅ Stay Updated:*  
 Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
+https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u
 *💻 Source Code:*  
 Fork & explore the project on GitHub:  
-https://github.com/trendex2030/TREND-X
+https://github.com/NjabuloJ/Njabulo-Jb
 
-> *© Powered by trendex King*
-Stay cool and hack smart. ✌🏻*`;
+>> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`;
                             await sock.sendMessage(sock.user.id, {
 text: desc,
 contextInfo: {
 externalAdReply: {
-title: "TREND-X 𝕮𝖔𝖓𝖓𝖊𝖈𝖙𝖊𝖉 ✅  ",
-thumbnailUrl: "https://files.catbox.moe/adymbp.jpg",
-sourceUrl: "https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O",
+title: "Njabulo Jb connected to linked device ",
+thumbnailUrl: "https://files.catbox.moe/0ikqoy.jpg",
+sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
 mediaType: 2,
 renderLargerThumbnail: true,
 showAdAttribution: true
