@@ -6,20 +6,13 @@
   <link rel="shortcut icon" href="" type="image/x-icon">
   <style>
     body {
-      background-color: black;
+      background-color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       margin: 0;
-      color: white;
-    }
-
-    {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "https://railway.app",
-            "logo": "https://files.catbox.moe/adymbp.jpg"
+      color: #000;
     }
 
     .button-container {
@@ -43,7 +36,6 @@
       justify-content: center;
       gap: 10px;
       padding: 0px 15px;
-      background-color: red;
       border-radius: 10px;
       border: none;
       color: white;
@@ -55,18 +47,6 @@
       text-decoration: none;
     }
 
-  
-    footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222; /* Darker gray footer background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    
-  }
     .button:before, .button:after {
       content: '';
       position: absolute;
@@ -108,17 +88,70 @@
         opacity: 1;
       }
     }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .spinner-border {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid #fff;
+      border-top: 3px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="button-container">
-    <h3>Ⴆყ NנɐႦυℓσ נႦ</h3></h3>
-    <div></div>
+    <h3>Ⴆყ NנɐႦυℓσ נႦ</h3>
     <a href="/qr" class="button" target="_blank"> <span>QR</span> </a> <br>
-    <a href="/pair" class="button" target="_blank"> <span>PAIR</span> </a> <br>
-    <footer>
-     ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ &copy; <span id="currentYear"></span>
-    </footer>
-  
+    <a href="/pair" class="button" target="_blank" onclick="showLoading()"> 
+      <span>PAIR</span> 
+      <div class="spinner-border" id="loading-spinner"></div>
+    </a> <br>
+    <button onclick="togglePlay()">Play/Pause</button>
+  </div>
+  <footer>
+    ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ &copy; <span id="currentYear"></span>
+  </footer>
+
+  <audio id="audio" src="https://files.catbox.moe/7e37rk.mp3"></audio>
+
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+
+    function showLoading() {
+      document.getElementById("loading-spinner").style.display = "inline-block";
+    }
+
+    function togglePlay() {
+      const audio = document.getElementById('audio');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
 </body>
 </html>
