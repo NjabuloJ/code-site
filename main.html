@@ -119,6 +119,20 @@
         transform: rotate(360deg);
       }
     }
+
+    .battery-status {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      font-size: 18px;
+    }
+
+    .wifi-status {
+      position: fixed;
+      top: 40px;
+      right: 10px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -129,11 +143,19 @@
       <span>PAIR</span> 
       <div class="spinner-border" id="loading-spinner"></div>
     </a> <br>
+    <button onclick="rewindAudio()">Rewind</button>
     <button onclick="togglePlay()">Play/Pause</button>
+    <button onclick="fastForwardAudio()">Fast Forward</button>
   </div>
   <footer>
     ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ &copy; <span id="currentYear"></span>
   </footer>
+  <div class="battery-status">
+    <span id="battery">--%</span>
+  </div>
+  <div class="wifi-status">
+    <span id="ip">Loading...</span>
+  </div>
 
   <audio id="audio" src="https://files.catbox.moe/7e37rk.mp3"></audio>
 
@@ -142,6 +164,45 @@
 
     function showLoading() {
       document.getElementById("loading-spinner").style.display = "inline-block";
+    }
+
+    const updateBattery = async () => {
+      if (navigator.getBattery) {
+        try {
+          const battery = await navigator.getBattery();
+          const setBattery = () => {
+            const batteryPercent = Math.round(battery.level * 100);
+            document.getElementById('battery').innerText = `${batteryPercent}%`;
+          };
+          battery.addEventListener('levelchange', setBattery);
+          setBattery();
+        } catch (error) {
+          console.error('Battery API error:', error);
+        }
+      }
+    }
+
+    const fetchIP = async () => {
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
+        document.getElementById('ip').innerText = `${data.ip}`;
+      } catch {
+        document.getElementById('ip').innerText = 'Offline';
+      }
+    }
+
+    updateBattery();
+    fetchIP();
+
+    function rewindAudio() {
+      const audio = document.getElementById('audio');
+      audio.currentTime -= 10;
+    }
+
+    function fastForwardAudio() {
+      const audio = document.getElementById('audio');
+      audio.currentTime += 10;
     }
 
     function togglePlay() {
@@ -154,4 +215,4 @@
     }
   </script>
 </body>
-</html>
+                                               </html>
