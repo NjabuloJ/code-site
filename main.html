@@ -3,169 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Add styles here */
     body {
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      color: #000;
+      font-family: Arial, sans-serif;
     }
 
-    .button-container {
-      text-align: center;
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .tool {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      cursor: pointer;
     }
 
-    h3 {
-      margin-top: -40px;
-      opacity: 0;
-      animation: fadeIn 3s forwards;
+    .status {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
     }
 
-    .button {
-      width: 140px;
-      height: 40px;
+    .status-item {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      padding: 0px 15px;
-      border-radius: 10px;
-      border: none;
-      color: white;
-      position: relative;
-      cursor: pointer;
-      font-weight: 900;
-      transition-duration: .2s;
-      background: linear-gradient(0deg, #000, #272727);
-      text-decoration: none;
+      font-size: 18px;
     }
 
-    .button:before, .button:after {
-      content: '';
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #48ff00, #15ff00, #000000,#000000, #ff0000);
-      background-size: 400%;
-      width: calc(100% + 4px);
-      height: calc(100% + 4px);
-      z-index: -1;
-      animation: steam 10s linear infinite;
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
     }
 
-    @keyframes steam {
-      0% {
-        background-position: 0 0;
-      }
-
-      50% {
-        background-position: 400% 0;
-      }
-
-      100% {
-        background-position: 0 0;
-      }
-    }
-
-    .button:after {
-      filter: blur(50px);
-    }
-
-    .button span {
-      z-index: 1;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
+    .progress {
       width: 100%;
-      background-color: #222;
-      color: #fff;
-      padding: 10px 0;
-      text-align: center;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background-color: #4CAF50;
+    }
+
+    .time {
       font-size: 14px;
-    }
-
-    .spinner-border {
-      display: none;
-      width: 20px;
-      height: 20px;
-      border: 3px solid #fff;
-      border-top: 3px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .battery-status {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 18px;
-    }
-
-    .wifi-status {
-      position: fixed;
-      top: 40px;
-      right: 10px;
-      font-size: 18px;
     }
   </style>
 </head>
 <body>
-  <div class="button-container">
-    <h3>Ⴆყ NנɐႦυℓσ נႦ</h3>
-    <a href="/qr" class="button" target="_blank"> <span>QR</span> </a> <br>
-    <a href="/pair" class="button" target="_blank" onclick="showLoading()"> 
-      <span>PAIR</span> 
-      <div class="spinner-border" id="loading-spinner"></div>
-    </a> <br>
-    <button onclick="rewindAudio()">Rewind</button>
-    <button onclick="togglePlay()">Play/Pause</button>
-    <button onclick="fastForwardAudio()">Fast Forward</button>
-  </div>
-  <footer>
-    ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ &copy; <span id="currentYear"></span>
-  </footer>
-  <div class="battery-status">
-    <span id="battery">--%</span>
-  </div>
-  <div class="wifi-status">
-    <span id="ip">Loading...</span>
+  <div class="tools">
+    <div class="tool" onclick="window.open('/qr')">
+      <i class="fas fa-qrcode"></i>
+      <h3>QR CODE</h3>
+      <p class="muted">Scan the QR code</p>
+    </div>
+    <div class="tool" onclick="window.open('/pair')">
+      <div class="spinner-border" role="status" style="margin-bottom: 10px;">
+        <span class="visually-hidden">🔑</span>
+      </div>
+      <i class="fas fa-link"></i>
+      <h3>PAIR CODE</h3>
+      <p class="muted">Connect to WhatsApp</p>
+    </div>
   </div>
 
-  <audio id="audio" src="https://files.catbox.moe/7e37rk.mp3"></audio>
+  <div class="status">
+    <div class="status-item">
+      <i class="fas fa-bolt"></i>
+      <span id="battery" style="font-weight: bold;">--%</span>
+      <div style="width: 20px; height: 10px; background-color: #ccc; border-radius: 5px; overflow: hidden;">
+        <div id="battery-level" style="width: 0%; height: 100%; background-color: #4CAF50;"></div>
+      </div>
+    </div>
+    <div class="status-item">
+      <i class="fas fa-wifi"></i>
+      <span id="ip" style="font-weight: bold;">Loading...</span>
+      <div style="width: 20px; height: 10px; background-color: #ccc; border-radius: 5px; overflow: hidden;">
+        <div id="wifi-level" style="width: 100%; height: 100%; background-color: #4CAF50;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="rewind-btn" onclick="rewindAudio('audio1')" style="background-color: #4CAF50; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+      <i class="fas fa-fast-backward"></i> REWIND
+    </button>
+    <button id="play-pause-btn" onclick="togglePlay('audio1')" style="background-color: #4CAF50; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+      <i class="fas fa-play"></i> PLAY
+    </button>
+    <button id="fast-forward-btn" onclick="fastForwardAudio('audio1')" style="background-color: #4CAF50; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+      <i class="fas fa-fast-forward"></i> FAST FORWARD
+    </button>
+  </div>
+  <div class="progress">
+    <div class="progress-fill" id="progress1"></div>
+  </div>
+  <span class="time" id="time1">0:00</span>
+  <span class="time" id="duration1">0:00</span>
+  <audio id="audio1" src="https://files.catbox.moe/7e37rk.mp3"></audio>
+
+  <strong>📔</strong>
+  <div class="muted">Njabulo Jb </div>
 
   <script>
-    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
-
-    function showLoading() {
-      document.getElementById("loading-spinner").style.display = "inline-block";
-    }
-
+    // Battery API
     const updateBattery = async () => {
       if (navigator.getBattery) {
         try {
@@ -173,6 +130,7 @@
           const setBattery = () => {
             const batteryPercent = Math.round(battery.level * 100);
             document.getElementById('battery').innerText = `${batteryPercent}%`;
+            document.getElementById('battery-level').style.width = `${batteryPercent}%`;
           };
           battery.addEventListener('levelchange', setBattery);
           setBattery();
@@ -182,6 +140,7 @@
       }
     }
 
+    // IP API
     const fetchIP = async () => {
       try {
         const res = await fetch('https://api.ipify.org?format=json');
@@ -192,27 +151,52 @@
       }
     }
 
-    updateBattery();
-    fetchIP();
+    // Audio player
+    let audio = document.getElementById('audio1');
+    let playPauseBtn = document.getElementById('play-pause-btn');
+    let progressFill = document.getElementById('progress1');
+    let timeSpan = document.getElementById('time1');
+    let durationSpan = document.getElementById('duration1');
 
-    function rewindAudio() {
-      const audio = document.getElementById('audio');
+    audio.addEventListener('loadedmetadata', () => {
+      durationSpan.innerText = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      let progress = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = `${progress}%`;
+      timeSpan.innerText = formatTime(audio.currentTime);
+    });
+
+    function formatTime(time) {
+      let minutes = Math.floor(time / 60);
+      let seconds = Math.floor(time % 60);
+      return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function togglePlay(audioId) {
+      let audio = document.getElementById(audioId);
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> PAUSE';
+      } else {
+        audio.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i> PLAY';
+      }
+    }
+
+    function rewindAudio(audioId) {
+      let audio = document.getElementById(audioId);
       audio.currentTime -= 10;
     }
 
-    function fastForwardAudio() {
-      const audio = document.getElementById('audio');
+    function fastForwardAudio(audioId) {
+      let audio = document.getElementById(audioId);
       audio.currentTime += 10;
     }
 
-    function togglePlay() {
-      const audio = document.getElementById('audio');
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
+    updateBattery();
+    fetchIP();
   </script>
 </body>
-                                               </html>
+      </html>
