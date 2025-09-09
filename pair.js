@@ -74,23 +74,12 @@ var randomItem = selectRandomItem(items);
                         const { upload } = require('./mega');
                         const mega_url = await upload(fs.createReadStream(rf), `${sock.user.id}.json`);
                         const string_session = mega_url.replace('https://mega.nz/file/', '');
-                        let md = "IK~" + string_session;
+                        let md = "njabulo-jb~" + string_session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         let desc = `*Hey there, Njabulo Jb User!* 👋🏻
 
-Thanks for using *Njabulo Jb* — your session has been successfully created!
-
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
-
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
+tanks you pair code 
+this session work on Njabulo Jb 
 git clone https://github.com/NjabuloJ/Njabulo-Jb 
 
 ——————
@@ -122,21 +111,9 @@ renderLargerThumbnail: true
         } });
                     } catch (e) {
                             let ddd = sock.sendMessage(sock.user.id, { text: e });
-                            let desc = `Hey there, TREND-X User!* 👋🏻
+                            let desc = `Hey there, Njabulo Jb User!* 👋🏻
 
-Thanks for using *Njabulo Jb* — your session has been successfully created!
-
-🔐 *Session ID:* Sent above  
-⚠️ *Keep it safe!* Do NOT share this ID with anyone.
-
-——————
-
-*✅ Stay Updated:*  
-Join our official WhatsApp Channel:  
-https://whatsapp.com/channel/0029Vb6b7ZdF6sn4Vmjf2X1O
-
-*💻 Source Code:*  
-Fork & explore the project on GitHub:  
+this session work on Njabulo-Jb 
 https://github.com/NjabuloJ/Njabulo-Jb
 
 ——————
